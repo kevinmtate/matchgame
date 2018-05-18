@@ -50,7 +50,6 @@ MatchGame.renderCards = function(cardValues, $game) {
 		$card.data('value', cardValues[i]);
 		$card.data('flipped', false);
 		$card.data('color', flippedColors[cardValues[i]-1]);
-		console.log($card);
 		$game.append($card);
 	}
 
@@ -82,9 +81,11 @@ MatchGame.flipCard = function($card, $game) {
 			});
 		} else {
 			$game.data('flippedCards').forEach(function(card) {
-				card.css("background-color", "rgb(32,64,86");
-				card.text('');
-				card.data('flipped', false);
+				setTimeout(function() {
+					card.css("background-color", "rgb(32,64,86");
+					card.text('');
+					card.data('flipped', false);
+				}, 1000);
 			});
 		}
 		$game.data('flippedCards', []);
