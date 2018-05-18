@@ -75,7 +75,7 @@ MatchGame.flipCard = function($card, $game) {
 		$game.data('flippedCards').push($card);
 	}
 
-	/*if ($game.data('flippedCards').length === 2) {
+	if ($game.data('flippedCards').length === 2) {
 		if ($game.data('flippedCards')[0].data('value') === $game.data('flippedCards')[1].data('value')) {
 			$game.data('flippedCards').forEach(function(card) {
 				card.css({"background-color": "rgb(153,153,153)", "color": "rgb(204,204,204)"});
@@ -88,5 +88,5 @@ MatchGame.flipCard = function($card, $game) {
 			});
 		}
 		$game.data('flippedCards', []);
-	}*/
+	}
 };
