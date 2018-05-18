@@ -82,8 +82,8 @@ MatchGame.flipCard = function($card, $game) {
 		} else {
 			$game.data('flippedCards').forEach(function(card) {
 				setTimeout(function() {
-					card.css("background-color", "rgb(32,64,86");
-					card.text('');
+					card.css("background-color", "rgb(32, 64, 86");
+					card.empty();
 					card.data('flipped', false);
 				}, 1000);
 			});
