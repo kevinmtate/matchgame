@@ -2,9 +2,12 @@
 <html>
 <head>
   <title>Match Game</title>
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900" rel="stylesheet">
   <link rel="icon" href="./favicon.png" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="resources/css/reset.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" 
   integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="resources/css/style.css">
 </head>
 <body>
 
@@ -12,8 +15,8 @@
     <div class="row">
 
       <!-- INSTRUCTIONS DIV -->
-      <div class="col-md-3">
-        <h1>Match Game</h1>
+      <div id="instructions" class="col-md-3">
+        <h2>Match Game</h2>
         <h5>Rules</h5>
         <p>Click on a card to reveal the number on the other side. Click on a second card to try
           and find a match to the first. If you succeed, the pair will will be removed from play.
@@ -24,24 +27,7 @@
 
       <!-- GAME DIV -->
       <div class="col-md-9">
-        <div class="row">
-          <div class="col-lg-3 card"></div>
-          <div class="col-lg-3 card"></div>
-          <div class="col-lg-3 card"></div>
-          <div class="col-lg-3 card"></div>
-          <div class="col-lg-3 card"></div>
-          <div class="col-lg-3 card"></div>
-          <div class="col-lg-3 card"></div>
-          <div class="col-lg-3 card"></div>
-          <div class="col-lg-3 card"></div>
-          <div class="col-lg-3 card"></div>
-          <div class="col-lg-3 card"></div>
-          <div class="col-lg-3 card"></div>
-          <div class="col-lg-3 card"></div>
-          <div class="col-lg-3 card"></div>
-          <div class="col-lg-3 card"></div>
-          <div class="col-lg-3 card"></div>
-        </div>
+        <div id="game" class="row"></div>
       </div>
     </div>
   </div>
