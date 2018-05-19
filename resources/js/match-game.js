@@ -1,4 +1,5 @@
 var MatchGame = {};
+var checkForWin = 0;
 
 /*
   Sets up a new game after HTML document has loaded.
@@ -53,7 +54,6 @@ MatchGame.renderCards = function(cardValues, $game) {
 		$game.append($card);
 	}
 
-
 	$('.card').click(function() {
 		MatchGame.flipCard($(this), $game);
 	});
@@ -79,6 +79,10 @@ MatchGame.flipCard = function($card, $game) {
 			$game.data('flippedCards').forEach(function(card) {
 				card.css({"background-color": "rgb(153,153,153)", "color": "rgb(204,204,204)"});
 			});
+			checkForWin++;
+			if (checkForWin === 8) {
+				MatchGame.gameOver();
+			}
 		} else {
 			$game.data('flippedCards').forEach(function(card) {
 				setTimeout(function() {
@@ -91,3 +95,10 @@ MatchGame.flipCard = function($card, $game) {
 		$game.data('flippedCards', []);
 	}
 };
+
+MatchGame.gameOver = function() {
+	$('#victory').css('display', 'block');
+	$('#victory').click(function() {
+		location.reload();
+	})
+}

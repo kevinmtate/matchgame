@@ -39,3 +39,14 @@ body {
     align-items: center;
     cursor: pointer;
 }
+
+#victory {
+    /*display: none;*/
+}
+
+#victory p {
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
