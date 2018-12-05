@@ -10,12 +10,13 @@
   <link rel="stylesheet" type="text/css" href="resources/css/style.css">
 </head>
 <body>
-
+  <div class="victory-overlay"></div>
+  <div class="victory">
+    <h5>You win!</h5>
+    <p>Play again?</p>
+  </div>
   <div class="container">
-
     <div class="row">
-
-      <!-- INSTRUCTIONS DIV -->
       <div id="instructions" class="col-md-3">
         <h2>Match Game</h2>
         <h5>Rules</h5>
@@ -24,20 +25,12 @@
           If not, try again!</p>
         <h5>How To Win</h5>
         <p>You win when all pairs have been found.</p>
-        <div id="victory">
-          <h5>You win!</h5>
-          <p>Play again?</p>
-        </div>
       </div>
-
-      <!-- GAME DIV -->
       <div class="col-md-9">
         <div id="game" class="row"></div>
       </div>
     </div>
   </div>
-
-  
 
   <script
     src="https://code.jquery.com/jquery-3.1.1.min.js"

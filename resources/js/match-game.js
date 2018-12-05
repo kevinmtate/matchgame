@@ -101,8 +101,12 @@ MatchGame.flipCard = function($card, $game) {
 };
 
 MatchGame.gameOver = function() {
-	$('#victory').css('display', 'block');
-	$('#victory').click(function() {
+	const $victory = $('.victory');
+	const $victoryOverlay = $('.victory-overlay');
+
+	$victoryOverlay.css('display', 'block');
+	$victory.css('display', 'block');
+	$victory.click(function() {
 		location.reload();
 	})
 }
