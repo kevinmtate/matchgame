@@ -1,12 +1,19 @@
 var MatchGame = {};
 var checkForWin = 0;
+const $game = $('#game');
 
 /*
   Sets up a new game after HTML document has loaded.
   Renders a 4x4 board of cards.
 */
 $(document).ready(function() {
-	MatchGame.renderCards(MatchGame.generateCardValues(), $('#game'));
+	MatchGame.renderCards(MatchGame.generateCardValues(), $game);
+
+	$('.card').click(function() {
+		if ($game.data('flippedCards').length !== 2) {
+			MatchGame.flipCard($(this), $game);
+		};
+	});
 });
 
 /*
@@ -53,10 +60,6 @@ MatchGame.renderCards = function(cardValues, $game) {
 		$card.data('color', flippedColors[cardValues[i]-1]);
 		$game.append($card);
 	}
-
-	$('.card').click(function() {
-		MatchGame.flipCard($(this), $game);
-	});
 };
 
 /*
@@ -83,16 +86,17 @@ MatchGame.flipCard = function($card, $game) {
 			if (checkForWin === 8) {
 				MatchGame.gameOver();
 			}
+			$game.data('flippedCards', []); 
 		} else {
 			$game.data('flippedCards').forEach(function(card) {
 				setTimeout(function() {
 					card.css("background-color", "rgb(32, 64, 86");
 					card.empty();
 					card.data('flipped', false);
+					$game.data('flippedCards', []);
 				}, 1000);
 			});
 		}
-		$game.data('flippedCards', []);
 	}
 };
 
