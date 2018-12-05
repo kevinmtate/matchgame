@@ -26,6 +26,10 @@ body {
     color: rgb(74, 74, 74);
 }
 
+.timer, .timer-label {
+    display: inline-block;
+}
+
 .card {
     align-items: center;
     background-color: rgb(32, 64, 86);
@@ -80,4 +84,8 @@ body {
     position: absolute;
     top: 0;
     width: 100%;
+}
+
+.your-time {
+    text-align: center;
 }
