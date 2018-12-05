@@ -102,9 +102,9 @@ MatchGame.flipCard = function($card, $game) {
 
 MatchGame.gameOver = function() {
 	const $victory = $('.victory');
-	const $victoryOverlay = $('.victory-overlay');
 
-	$victoryOverlay.css('display', 'block');
+	$('.victory-overlay').css('display', 'block');
+	$('.victory-wrapper').css('z-index', '1000');
 	$victory.css('display', 'block');
 	$victory.click(function() {
 		location.reload();

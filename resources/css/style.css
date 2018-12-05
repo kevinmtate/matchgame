@@ -40,16 +40,21 @@ body {
     justify-content: center;
 }
 
+.victory-wrapper {
+    bottom: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
 .victory {
     background-color: rgb(255, 255, 255);
     box-shadow: 5px 5px 25px;
     display: none;
-    left: 30%;
+    margin: 200px auto;
     padding: 50px;
-    position: absolute;
-    top: 35%;
     width: 500px;
-    z-index: 10;
 }
 
 .victory h5 {
@@ -72,7 +77,7 @@ body {
     display: none;
     height: 100%;
     opacity: .3;
-    position: fixed;
+    position: absolute;
+    top: 0;
     width: 100%;
-    z-index: 5;
 }
