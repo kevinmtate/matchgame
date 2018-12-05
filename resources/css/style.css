@@ -3,8 +3,8 @@ html {
 }
 
 body {
-    font-family: "Work Sans", "sans-serif";
     background-color: rgb(255, 242, 242);
+    font-family: "Work Sans", "sans-serif";
 }
 
 .container {
@@ -12,9 +12,9 @@ body {
 }
 
 #instructions h2 {
-    font-weight: bold;
-    font-size: 2.5rem;
     color: rgb(32, 64, 86);
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 #instructions h5 {
@@ -27,29 +27,29 @@ body {
 }
 
 .card {
-    height: 12.5rem;
+    align-items: center;
     background-color: rgb(32, 64, 86);
-    color: rgb(255, 255, 255);
     border: 4px solid #ffffff;
     border-radius: 8px;
-    font-weight: 900;
-    font-size: 7rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: rgb(255, 255, 255);
     cursor: pointer;
+    display: flex;
+    font-size: 7rem;
+    font-weight: 900;
+    height: 12.5rem;
+    justify-content: center;
 }
 
 .victory {
-    /* display: none; */
     background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 25px;
+    display: none;
+    margin: auto;
+    padding: 50px;
     position: absolute;
     top: 35%;
-    z-index: 10;
-    padding: 50px;
-    box-shadow: 5px 5px 25px;
     width: 500px;
-    margin: auto;
+    z-index: 10;
 }
 
 .victory h5 {
@@ -59,20 +59,20 @@ body {
 
 .victory p {
     background-color: rgb(255, 242, 242);
+    cursor: pointer;
+    margin: auto;
     padding: 10px 0;
     text-align: center;
-    cursor: pointer;
-    width: 50%;
-    margin: auto;
     text-transform: uppercase;
+    width: 50%;
 }
 
 .victory-overlay {
-    /* display: none; */
     background-color: #000;
-    opacity: .3;
+    display: none;
     height: 100%;
+    opacity: .3;
+    position: fixed;
     width: 100%;
     z-index: 5;
-    position: fixed;
 }
