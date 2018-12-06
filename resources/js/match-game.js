@@ -3,22 +3,15 @@ var checkForWin = 0;
 const $game = $('#game');
 let timer;
 
-$(document).ready(function() {
-	MatchGame.renderCards(MatchGame.generateCardValues(), $game);
-	$('.timer').data('timer', 0);
-
-	timer = setInterval(function() {
-		MatchGame.incrementTimer($('.timer'));
-	}, 1000);
-
+MatchGame.eventHandler = function() {
 	$('.card').click(function() {
 		if ($game.data('flippedCards').length !== 2) {
 			MatchGame.flipCard($(this), $game);
 		};
 	});
-});
+};
 
-MatchGame.generateCardValues = function () {
+MatchGame.generateCardValues = function() {
 	var initialArray = [];
 	for (var i = 1; i < 9; i++) {
 		initialArray.push(i);
@@ -31,6 +24,14 @@ MatchGame.generateCardValues = function () {
 		initialArray.splice(randomIndex, 1);
 	}
 	return randomArray;
+};
+
+MatchGame.init = function() {
+	MatchGame.renderCards(MatchGame.generateCardValues(), $game);
+	$('.timer').data('timer', 0);
+	timer = setInterval(function() {
+		MatchGame.incrementTimer($('.timer'));
+	}, 1000);
 };
 
 MatchGame.flipCard = function($card, $game) {
@@ -50,15 +51,15 @@ MatchGame.flipCard = function($card, $game) {
 			});
 			checkForWin++;
 			if (checkForWin === 8) {
-				MatchGame.gameOver();
+				MatchGame.victory();
 			}
 			$game.data('flippedCards', []); 
 		} else {
 			$game.data('flippedCards').forEach(function(card) {
 				setTimeout(function() {
-					card.css("background-color", "rgb(32, 64, 86");
-					card.empty();
 					card.data('flipped', false);
+					card.empty();
+					card.css("background-color", "rgb(32, 64, 86");
 					$game.data('flippedCards', []);
 				}, 1000);
 			});
@@ -66,7 +67,7 @@ MatchGame.flipCard = function($card, $game) {
 	}
 };
 
-MatchGame.gameOver = function() {
+MatchGame.victory = function() {
 	const $victory = $('.victory');
 	clearInterval(timer);
 	$('.score').text($('.timer').data('timer') + 's');
@@ -106,3 +107,8 @@ MatchGame.incrementTimer = function($timer) {
 	$timer.text(currentTime + 's');
 	$timer.data('timer', currentTime);
 };
+
+$(document).ready(function() {
+	MatchGame.init();
+	MatchGame.eventHandler();
+});
